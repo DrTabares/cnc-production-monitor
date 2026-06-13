@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CNC Dashboard</title>
+</head>
+<body>
+
+<h1>CNC Production Monitoring System</h1>
+
+<table border="1">
+
+    <tr>
+        <th>Machine</th>
+        <th>Status</th>
+        <th>Production</th>
+        <th>Timestamp</th>
+    </tr>
+
+    <tr th:each="machine : ${machines}">
+        <td th:text="${machine.machineName}"></td>
+        <td th:text="${machine.status}"></td>
+        <td th:text="${machine.productionCount}"></td>
+        <td th:text="${machine.timestamp}"></td>
+    </tr>
+
+</table>
+
+<h2>
+Total registros:
+<span th:text="${totalRecords}"></span>
+</h2>
+
+</body>
+</html>
