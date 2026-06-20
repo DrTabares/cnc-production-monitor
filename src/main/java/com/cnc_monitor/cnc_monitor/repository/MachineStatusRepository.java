@@ -17,5 +17,7 @@ extends JpaRepository<MachineStatus, Long> {
 
        List<MachineStatus>
        findByStatus(String status);
+
+       long countByStatus(String status);
        
 }
