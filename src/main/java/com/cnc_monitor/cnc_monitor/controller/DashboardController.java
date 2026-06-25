@@ -48,6 +48,16 @@ public class DashboardController {
             dashboardService.getTotalRecordsActual()
         );
 
+        model.addAttribute(
+            "currentMachines",
+            dashboardService.getCurrentMachineStatus()
+        );
+
+        model.addAttribute(
+            "currentProduction",
+            dashboardService.getCurrentProduction()
+        );
+
         return "dashboard";
     }
         

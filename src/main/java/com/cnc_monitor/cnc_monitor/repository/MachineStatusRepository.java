@@ -15,6 +15,10 @@ extends JpaRepository<MachineStatus, Long> {
        List<MachineStatus>
        findByMachineName(String machineName);
 
+       MachineStatus findTopByMachineNameOrderByTimestampDesc(String machineName);
+       //findtopbymachinenameorderbytimestampdesc significa que se busca el último 
+       //estado de la máquina por nombre de máquina y ordenado por timestamp descendente.
+
        List<MachineStatus>
        findByStatus(String status);
 
