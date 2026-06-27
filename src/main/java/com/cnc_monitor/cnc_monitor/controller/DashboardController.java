@@ -58,6 +58,21 @@ public class DashboardController {
             dashboardService.getCurrentProduction()
         );
 
+        model.addAttribute(
+            "todayRecords",
+            dashboardService.getTodayRecords()
+        );
+
+        model.addAttribute(
+            "todayRecordCount",
+            dashboardService.getTodayRecordCount()
+        );
+
+        model.addAttribute(
+            "machineCount",
+            dashboardService.getMachineCount()
+        );
+
         return "dashboard";
     }
         

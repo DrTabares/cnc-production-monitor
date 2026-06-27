@@ -1,5 +1,6 @@
 package com.cnc_monitor.cnc_monitor.repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,6 +22,10 @@ extends JpaRepository<MachineStatus, Long> {
 
        List<MachineStatus>
        findByStatus(String status);
+
+       List<MachineStatus> findByTimestampBetween(LocalDateTime start, LocalDateTime end);
+       //esta consulta significa que se busca todos los estados de las máquinas que tengan 
+       //un timestamp entre dos fechas específicas.
 
        long countByStatus(String status);
        

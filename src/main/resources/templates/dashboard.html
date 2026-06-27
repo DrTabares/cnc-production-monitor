@@ -70,6 +70,27 @@
 
     </div>
 
+    <hr>
+
+        <h3>Reporte del Día</h3>
+
+            <p>
+            Fecha:
+            <span th:text="${#temporals.format(T(java.time.LocalDate).now(), 'dd/MM/yyyy')}"></span>
+            </p>
+
+            <p>
+            Registros del día:
+            <span th:text="${todayRecordCount}"></span>
+            </p>
+
+            <p>
+            Máquinas monitoreadas:
+            <span th:text="${machineCount}"></span>
+            </p>
+
+    <hr>
+
     <h2>Estado Actual de Máquinas</h2>
 
     <table border="1">

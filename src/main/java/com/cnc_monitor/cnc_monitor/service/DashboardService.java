@@ -1,5 +1,7 @@
 package com.cnc_monitor.cnc_monitor.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,5 +53,22 @@ public class DashboardService {
                 .sum();
     }
 
-    
+    public List<MachineStatus> getTodayRecords() {
+
+        LocalDateTime start = LocalDate.now().atStartOfDay();
+
+        LocalDateTime end = LocalDate.now().atTime(23, 59, 59);
+
+        return repository.findByTimestampBetween(start, end);
+    }
+
+    public long getTodayRecordCount() {
+
+        return getTodayRecords().size();
+    }
+
+    public long getMachineCount() {
+
+        return getCurrentMachineStatus().size();
+    }
 }
